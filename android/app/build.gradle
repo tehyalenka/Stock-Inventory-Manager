@@ -1,0 +1,59 @@
+plugins {
+    id "com.android.application"
+    // Add the Google services Gradle plugin
+    id 'com.google.gms.google-services'  // This line is important for Firebase
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+dependencies {
+    // Firebase BoM (Bill of Materials) to automatically manage versions
+    implementation platform('com.google.firebase:firebase-bom:33.6.0')  // Make sure to use the latest version
+
+    // Firebase SDK dependencies
+    // Example: Firebase Authentication
+    implementation 'com.google.firebase:firebase-auth'
+
+    // Example: Firebase Firestore
+    implementation 'com.google.firebase:firebase-firestore'
+
+    // Example: Firebase Cloud Messaging
+    implementation 'com.google.firebase:firebase-messaging'
+
+    // Add any other Firebase SDKs you want to use, like Firebase Database, etc.
+}
+
+
+android {
+    namespace = "com.example.stock_inventory_app"
+    compileSdk = 34
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        applicationId = "com.example.stock_inventory_app"  // Your app's unique ID
+        minSdk = 23
+        targetSdk = 34
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
