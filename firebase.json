@@ -1,0 +1,30 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "stockinventory-aa4ae",
+          "appId": "1:176001214685:android:a11340c8b8917c8cb19334",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "stockinventory-aa4ae",
+          "configurations": {
+            "android": "1:176001214685:android:a11340c8b8917c8cb19334",
+            "web": "1:176001214685:web:733bcf9fd4881065b19334"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
